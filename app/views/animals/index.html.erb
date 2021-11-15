@@ -1,0 +1,4 @@
+<h1> Animals </h1 >
+  <% @animals.each do |animal| %>
+    <%= link_to animal.name, animal_path(animal) %>
+  <% end %>

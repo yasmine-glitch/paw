@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row mt-4">
+    <%= simple_form_for (@animal) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :age %>
+      <%= f.input :address%>
+      <%= f.input :photo, as: :file %>
+      <%= f.input :price%>
+      <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
