@@ -10,6 +10,8 @@ class ReservationsController < ApplicationController
     @user = current_user
     # identify the reservation animal
     @animal = Animal.find(params[:animal_id])
+    # authorize animal
+    authorize @animal
     # create the reservation
     @reservation = Reservation.new
   end
