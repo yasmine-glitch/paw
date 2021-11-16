@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  font-family: lato;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,29 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar i {
+  font-size: 40px;
+  margin-left: 10px;
+}
+
+.header {
+  display:flex;
+}
+
+.header h2 {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-family: lato;
+  font-weight: bold;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: black;
+  font-family: lato;
 }
