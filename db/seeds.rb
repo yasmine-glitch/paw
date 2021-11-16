@@ -7,13 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cleaning database..."
+Reservation.destroy_all
 Animal.destroy_all
 User.destroy_all
-Species.destroy_all
-Reservation.destroy_all
 
 
-puts 'Creating users (owner side)...'
+puts 'Creating users...'
 
 user1 = { name: "Caroline", is_owner: true, email: "caroline@paw.com", password: "hellopaw", password_confirmation: "hellopaw" }
 user2 = { name: "Amelie", is_owner: true, email: "amelie@paw.com", password: "hellopaw", password_confirmation: "hellopaw" }
@@ -29,24 +28,11 @@ user8 = { name: "Eric", is_owner: false, email: "eric@paw.com", password: "hello
   puts "Created #{user.name}"
 end
 
-
-puts "Creating species..."
-species1 = { name: "dog", quality: "for young children" }
-species2 = { name: "cat", quality: "eats mouses" }
-species3 = { name: "goat", quality: "for the grass" }
-species4 = { name: "hen", quality: "for laying eggs" }
-
-[species1, species2, species3, species4].each do |attributes|
-  species = Species.create!(attributes)
-  puts "Created #{species.name}"
-end
-
-
 puts "Creating animals..."
-animal1 = { name: "Wafi", age: 3, address: "20 avenue de la République", price: 50, user: User.where('is_owner = true').sample, species: Species.all.sample }
-animal2 = { name: "Marooo", age: 2, address: "35 avenue de la République", price: 22, user: User.where('is_owner = true').sample, species: Species.all.sample }
-animal3 = { name: "Wannaa", age: 5, address: "72 avenue de la République", price: 15, user: User.where('is_owner = true').sample, species: Species.all.sample }
-animal4 = { name: "Lana", age: 1, address: "2 avenue de la République", price: 62, user: User.where('is_owner = true').sample, species: Species.all.sample }
+animal1 = { name: "Wafi", age: 3, address: "20 avenue de la République", price: 50, user: User.where('is_owner = true').sample, species: "dog", quality: "funny", description: "very cool dog" }
+animal2 = { name: "Marooo", age: 2, address: "35 avenue de la République", price: 22, user: User.where('is_owner = true').sample, species: "cat", quality: "cute", description: "very cool cat" }
+animal3 = { name: "Wannaa", age: 5, address: "72 avenue de la République", price: 15, user: User.where('is_owner = true').sample, species: "bird", quality: "fly", description: "very cool bird" }
+animal4 = { name: "Lana", age: 1, address: "2 avenue de la République", price: 62, user: User.where('is_owner = true').sample, species: "dog", quality: "fun", description: "very great dog" }
 
 [animal1, animal2, animal3, animal4].each do |attributes|
   animal = Animal.create!(attributes)

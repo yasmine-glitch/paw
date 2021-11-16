@@ -6,7 +6,6 @@ class CreateAnimals < ActiveRecord::Migration[6.0]
       t.integer :age
       t.integer :price
       t.references :user, null: false, foreign_key: true
-      t.references :species, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_11_16_092853) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,10 +43,11 @@ ActiveRecord::Schema.define(version: 2021_11_16_092853) do
     t.integer "age"
     t.integer "price"
     t.bigint "user_id", null: false
-    t.bigint "species_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["species_id"], name: "index_animals_on_species_id"
+    t.string "species"
+    t.string "description"
+    t.string "quality"
     t.index ["user_id"], name: "index_animals_on_user_id"
   end
 
@@ -62,13 +64,6 @@ ActiveRecord::Schema.define(version: 2021_11_16_092853) do
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
-  create_table "species", force: :cascade do |t|
-    t.string "quality"
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -83,8 +78,8 @@ ActiveRecord::Schema.define(version: 2021_11_16_092853) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "animals", "species"
   add_foreign_key "animals", "users"
   add_foreign_key "reservations", "animals"
   add_foreign_key "reservations", "users"
