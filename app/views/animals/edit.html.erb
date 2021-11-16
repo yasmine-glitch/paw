@@ -1,18 +1,11 @@
-<div class="container">
-  <div class="row mt-4">
-    <%= simple_form_for (@animal) do |f| %>
+<%= simple_form_for (@animal) do |f| %>
       <%= f.input :name %>
       <%= f.input :age %>
       <%= f.input :address%>
-      <%= f.input :description%>
-      <%= f.input :species%>
-      <%= f.input :quality%>
       <%= f.input :price%>
       <%= f.input :species%>
       <%= f.input :description%>
       <%= f.input :quality%>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit "Create animal", class: "btn btn-primary" %>
+      <%= f.submit "Update animal", class: "btn btn-primary" %>
     <% end %>
-  </div>
-</div>
