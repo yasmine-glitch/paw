@@ -4,9 +4,9 @@
       <%= f.input :name %>
       <%= f.input :age %>
       <%= f.input :address%>
-      <%= f.input :photo, as: :file %>
       <%= f.input :price%>
-      <%= f.submit "Submit review", class: "btn btn-primary" %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.submit "Create animal", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

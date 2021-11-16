@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(version: 2021_11_16_092853) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "animals", "species"
   add_foreign_key "animals", "users"
   add_foreign_key "reservations", "animals"
   add_foreign_key "reservations", "users"
