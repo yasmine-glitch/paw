@@ -1,6 +1,6 @@
 <%= simple_form_for (@animal) do |f| %>
       <%= f.input :name %>
-      <%= f.input :age %>
+      <%= f.input :age, collection: 0..20 %>
       <%= f.input :address%>
       <%= f.input :price%>
       <%= f.input :species%>
