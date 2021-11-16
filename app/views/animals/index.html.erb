@@ -1,4 +1,18 @@
 <h1> Animals </h1 >
-  <% @animals.each do |animal| %>
-    <%= link_to animal.name, animal_path(animal) %>
-  <% end %>
+  <ul>
+    <% @animals.each do |animal| %>
+      <li>
+        <%= link_to animal.name, animal_path(animal) %>
+        <% if policy(animal).edit? %>
+          <%= link_to "Update", edit_animal_path(animal) %>
+        <% end %>
+        <% if policy(animal).destroy? %>
+          <%= link_to "Destroy", destroy_path(animal.id), method: :delete %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<br>
+<br>
+<br>
+<%= link_to "Create a new Animal", new_animal_path %>

@@ -1,13 +1,17 @@
+
+
+
 <div class="container">
   <div class="row mt-4">
     <%= simple_form_for (@animal) do |f| %>
       <%= f.input :name %>
-      <%= f.input :age %>
-      <%= f.input :address%>
-      <%= f.input :description%>
-      <%= f.input :species%>
-      <%= f.input :quality%>
-      <%= f.input :price%>
+      <%= f.input :age, collection: 0..20 %>
+      <%= f.input :address, input_html: { data: { geocoder_target: "address" } },
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+      <%= f.input :price, input_html: {min: 0, step: 1} %>
+      <%= f.input :species, collection: @species%>
+      <%= f.input :quality, collection: ["quality1", "quality2", "quality3"]%>
+      <%= f.input :description, as: :text, input_html: {rows: 3}%>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit "Create animal", class: "btn btn-primary" %>
     <% end %>
