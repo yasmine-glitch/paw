@@ -1,9 +1,49 @@
-<%= @animal.name %>
+<div class="container">
 
-<% @animal.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+  <div class="animal-main-show border-bottom 5px" >
+    <div class="animal-show-title">
+      <h2><%= @animal.name %>, 2 yo goat specialized in lawn maintenance </h2>
+      <div class="d-flex justify-content-between">
+        <div class="col">Goat</div>
+        <div class="col">Work</div>
+        <div class="col">€ 19 / day</div>
+        <div class="col">Paris area</div>
+        <div class="col">Share</div>
+        <div class="col">Save</div>
+      </div>
+    </div>
 
-<%= link_to 'Back', animals_path %>
+    <div class="animal-show-images d-flex flex-row">
+      <div class="main-image col-6">
+        <%= image_tag "Kim_main.png", alt: "Kim", width: 200 %>
+        <%#= cl_image_tag @animal.photos[0].key, height: 300, width: 400, crop: :fill %>
+      </div>
+      <div class="4-images d-flex flex-row col-6">
+        <div class="d-flex flex-column">
+          <%= image_tag "Kim_main.png", alt: "Kim", width: 200 %>
+          <%#= cl_image_tag @animal.photos[1].key, height: 300, width: 400, crop: :fill %>
+          <%= image_tag "Kim_main.png", alt: "Kim", width: 200 %>
+          <%#= cl_image_tag @animal.photos[2].key, height: 300, width: 400, crop: :fill %>
+        </div>
+        <div class="d-flex flex-column">
+          <%= image_tag "Kim_main.png", alt: "Kim", width: 200 %>
+          <%#= cl_image_tag @animal.photos[3].key, height: 300, width: 400, crop: :fill %>
+          <%= image_tag "Kim_main.png", alt: "Kim", width: 200 %>
+          <%#= cl_image_tag @animal.photos[4].key, height: 300, width: 400, crop: :fill %>
+        </div>
+      </div>
 
-<%= link_to 'book me', new_animal_reservation_path(@animal) %>
+    </div>
+  </div>
+
+  <div class="show-details">
+  </div>
+
+
+
+
+  <%= link_to 'Back', animals_path %>
+
+  <%= link_to 'book me', new_animal_reservation_path(@animal) %>
+
+</div>
