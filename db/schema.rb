@@ -42,13 +42,11 @@ ActiveRecord::Schema.define(version: 2021_11_16_092853) do
     t.integer "age"
     t.integer "price"
     t.bigint "user_id", null: false
-    t.bigint "species_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "species"
     t.string "description"
     t.string "quality"
-    t.index ["species_id"], name: "index_animals_on_species_id"
     t.index ["user_id"], name: "index_animals_on_user_id"
   end
 
@@ -63,13 +61,6 @@ ActiveRecord::Schema.define(version: 2021_11_16_092853) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["animal_id"], name: "index_reservations_on_animal_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
-  end
-
-  create_table "species", force: :cascade do |t|
-    t.string "quality"
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
