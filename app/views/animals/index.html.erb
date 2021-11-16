@@ -1,4 +1,25 @@
-<h1> Animals </h1 >
-  <% @animals.each do |animal| %>
-    <%= link_to animal.name, animal_path(animal) %>
-  <% end %>
+<div class="container">
+  <div class="card-animal">
+    <div class="card-animal-infos">
+      <h2> Your selection </h2 >
+    </div>
+    <% @animals.each do |animal| %>
+      <div class="card-animal-infos">
+        <div class="photo-animal">
+          <% if animal.photos.attached? %>
+            <%= cl_image_tag animal.photos.first.key, height: 100, width: 100, crop: :fill %>
+          <% end %>
+        </div>
+        <div class="animal-infos">
+          <%= link_to animal.name, animal_path(animal) %>
+          <p><%= animal.quality %> </p>
+          <p><%= animal.age %> years old </p>
+          <p><%= animal.description %> </p>
+          <p class="price"><%= animal.price %> € /day </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="map">
+  </div>
+</div>
