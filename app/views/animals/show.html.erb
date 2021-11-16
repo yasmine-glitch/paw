@@ -1,5 +1,9 @@
 <%= @animal.name %>
 
+<% @animal.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <%= link_to 'Back', animals_path %>
 
 <%= link_to 'book me', new_animal_reservation_path(@animal) %>
