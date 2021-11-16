@@ -1,0 +1,93 @@
+.card-animal {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-animal > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-animal h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-animal p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-animal .card-animal-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  background-color: #F0F7EE;
+  margin: 3px;
+  padding-top: 5px;
+  border-radius:7px;
+}
+
+.card-animal-infos .card-animal-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.card-animal-infos img {
+  display:block;
+  position: relative;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.map {
+  width: 300px;
+}
+
+.photo-animal{
+  display :flex;
+  flex-direction: row;
+}
+
+.animal-infos {
+  display :flex;
+  flex-direction: column;
+  margin: 5px;
+  padding-left: 10px;
+  width: 100px;
+}
+
+.animal-infos .price {
+text-align: end;
+font-weight: bold;
+}
+
+.animal-infos p {
+color: black;
+}
+
+.animal-infos a {
+text-decoration: none;
+color: black;
+font-weight: bold;
+}
+
+.card-animal-infos h2 {
+  text-align: center;
+}
