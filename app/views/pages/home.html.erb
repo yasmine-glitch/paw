@@ -1,4 +1,26 @@
 <h1>Pages#home</h1>
+
+<div class="container">
+  <!--Filters bar with buttons (address, check-in, check-out, species -->
+  <div class="d-flex justify-content-between">
+    <div class= "btn btn-filter"> Address<br>Where are you?</div>
+    <div class= "btn btn-filter"> Check in<br>Add a date</div>
+    <div class= "btn btn-filter"> Check out<br>Add a date</div>
+    <div class= "btn btn-filter"> Species<br>What animal?</div>
+  </div>
+  <!-- Inspiration Card Goat-->
+  <div class="card-inspiration" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1552066318-4286142ca637?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80)">
+    <div>
+      <div>
+        <p><strong>Adopt a goat</strong></p>
+        <p> to mow your lawn </p>
+      </div>
+      <!--lien vers toutes les goats -->
+      <div style = "margin-top: 30px">
+        <%= link_to 'Browse Goats', animals_path(species: 'goat'), class: "btn-browse"%>
+      </div>
+    </div>
+  </div>
+</div>
+
 <p>Find me in app/views/pages/home.html.erb</p>
-<!--lien des card inspi -->
-<%= link_to 'view all dogs', animals_path(species: 'dog') %>
