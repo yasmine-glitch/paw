@@ -1,6 +1,12 @@
 class AnimalsController < ApplicationController
   def index
-    @animals = policy_scope(Animal).order(created_at: :desc)
+    if params[:species]
+      @animals = Animal.where(species: params[:species])
+    else
+      @animals = Animal.all
+    end
+    #commented for demo @animals = policy_scope(Animal).order(created_at: :desc)
+
   end
 
   def show
