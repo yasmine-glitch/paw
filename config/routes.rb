@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :animals do
-    resources :reservations, only: [ :new, :create ]
+    resources :reservations, only: [ :new, :create, :show ]
   end
   get "/dashboard", to: "pages#dashboard"
   get "/reservations", to: "reservations#index"

@@ -1,0 +1,10 @@
+<h1>Book Me</h1>
+
+<%= simple_form_for [@animal, @reservation] do |f|%>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :address %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', animal_path(@animal) %>

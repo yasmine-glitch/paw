@@ -1,1 +1,5 @@
 <%= @animal.name %>
+
+<%= link_to 'Back', animals_path %>
+
+<%= link_to 'book me', new_animal_reservation_path(@animal) %>
