@@ -6,6 +6,14 @@ class AnimalsController < ApplicationController
       @animals = Animal.all
     end
 
+    @markers = @animals.geocoded.map do |animal|
+    {
+      lat: animal.latitude,
+      lng: animal.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { animal: animal })
+    }
+    end
+
     @animals = policy_scope(Animal).order(created_at: :desc)
   end
 
