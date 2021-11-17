@@ -8,7 +8,7 @@
         <%= link_to animal_path(animal) do %>
         <div class="photo-animal">
           <% if animal.photos.attached? %>
-            <%= cl_image_tag animal.photos.first.key, height: 150, width: 100, crop: :fill %>
+            <%= cl_image_tag animal.photos.first.key, height: 150, width: 150, crop: :fill %>
           <% end %>
         </div>
         <div class="animal-infos">
