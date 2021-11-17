@@ -4,6 +4,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
+  width: 300px;
 }
 
 .card-animal > img {
@@ -63,7 +64,7 @@ p {
 }
 
 .map {
-  width: 300px;
+  width: 200px;
 }
 
 .photo-animal{
@@ -93,4 +94,10 @@ font-size: 10px;
   &:hover {
     color: red;
   }
+}
+
+.map img {
+height: 400px;
+width: 700px;
+padding: 10px;
 }
