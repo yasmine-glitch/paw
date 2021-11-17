@@ -1,17 +1,18 @@
-<div class="container">
+<div class="container-index">
   <div class="card-animal">
     <div class="card-animal-infos">
       <h2> Your selection </h2 >
     </div>
     <% @animals.each do |animal| %>
       <div class="card-animal-infos">
+        <%= link_to animal_path(animal) do %>
         <div class="photo-animal">
           <% if animal.photos.attached? %>
             <%= cl_image_tag animal.photos.first.key, height: 100, width: 100, crop: :fill %>
           <% end %>
         </div>
         <div class="animal-infos">
-          <%= link_to animal.name, animal_path(animal) %>
+          <p class="name"><%= animal.name.capitalize %> </p>
           <p><%= animal.quality %> </p>
           <p><%= animal.age %> years old </p>
           <p><%= animal.description %> </p>
@@ -20,9 +21,10 @@
             <%= link_to "Update", edit_animal_path(animal) %>
           <% end %>
           <% if policy(animal).destroy? %>
-            <%= link_to "Destroy", destroy_path(animal.id), method: :delete %>
+            <%= link_to "Delete", destroy_path(animal.id), method: :delete %>
           <% end %>
         </div>
+        <% end %>
       </div>
     <% end %>
   </div>

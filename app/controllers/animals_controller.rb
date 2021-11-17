@@ -5,7 +5,7 @@ class AnimalsController < ApplicationController
     else
       @animals = Animal.all
     end
-    #commented for demo @animals = policy_scope(Animal).order(created_at: :desc)
+    @animals = policy_scope(Animal).order(created_at: :desc)
 
   end
 
