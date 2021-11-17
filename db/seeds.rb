@@ -47,8 +47,9 @@ url = [
 ]
 
 [animal5, animal6, animal7, animal8].each_with_index do |attributes, index|
-  animal = Animal.create!(attributes)
+  animal = Animal.new(attributes)
   animal.photos.attach(io: URI.open(url[index]), filename: "#{animal.name}.png", content_type: "image/png")
+  animal.save
   puts "Created #{animal.name}"
 end
 
