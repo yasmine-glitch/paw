@@ -1,10 +1,6 @@
 class AnimalsController < ApplicationController
   def index
-    if params[:species]
-      @animals = Animal.where(species: params[:species])
-    else
-      @animals = Animal.all
-    end
+    @animals = policy_scope(Animal).order(created_at: :desc)
 
     @markers = @animals.geocoded.map do |animal|
     {
@@ -14,7 +10,6 @@ class AnimalsController < ApplicationController
     }
     end
 
-    @animals = policy_scope(Animal).order(created_at: :desc)
   end
 
   def show
