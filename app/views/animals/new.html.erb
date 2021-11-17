@@ -10,7 +10,7 @@
               wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
       <%= f.input :price, input_html: {min: 0, step: 1} %>
       <%= f.input :species, collection: @species%>
-      <%= f.input :quality, collection: ["quality1", "quality2", "quality3"]%>
+      <%= f.input :quality, label: "Qualities", as: :check_boxes, collection: [ "Helper", "Friendly", "Worker", "Sassy", "Handsome", "Funny", "Playfull", "Quiet"]%>
       <%= f.input :description, as: :text, input_html: {rows: 3}%>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit "Create animal", class: "btn btn-primary" %>
