@@ -5,6 +5,13 @@
   display: flex;
   flex-direction: column;
   width: 300px;
+
+  p {
+  font-size: 12px;
+  opacity: .9;
+  margin: 0;
+  font-weight: 200;
+  }
 }
 
 .card-animal > img {
@@ -17,13 +24,6 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-}
-
-p {
-  font-size: 12px;
-  opacity: .9;
-  margin: 0;
-  font-weight: 200;
 }
 
 .name {
