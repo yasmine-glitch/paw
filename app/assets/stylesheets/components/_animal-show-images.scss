@@ -1,0 +1,26 @@
+.animal-show-images {
+  height: 450px;
+}
+
+
+img {
+  border-radius: 15px;
+  background-position: center;
+  background-size: cover;
+  margin: 3px;
+}
+
+.main-image {
+  height: 100%;
+}
+
+.main-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.secondary-img {
+  height: 50%;
+  width: 100%;
+}
