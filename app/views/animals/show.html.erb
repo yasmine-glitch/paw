@@ -18,31 +18,26 @@
     </div>
 
     <div class="animal-show-images d-flex flex-row">
-      <div class="main-image col-6 me-5">
-        <%= image_tag "Kim_main.png", alt: "Kim", class:'main-img' %>
-        <%#= cl_image_tag @animal.photos[0].key, height: 300, width: 400, crop: :fill %>
-      </div>
-      <div class="4-images d-flex flex-row col-6">
-        <div class="d-flex flex-column justify-content-between w-50 mx-3">
-          <%= image_tag "Kim_main.png", alt: "Kim", width: 200, class:'secondary-img' %>
-          <%#= cl_image_tag @animal.photos[1].key, height: 300, width: 400, crop: :fill %>
-          <%= image_tag "Kim_main.png", alt: "Kim", width: 200, class:'secondary-img' %>
-          <%#= cl_image_tag @animal.photos[2].key, height: 300, width: 400, crop: :fill %>
+      <% if @animal.photos.attached? %>
+        <div class="main-image col-6 me-5">
+          <%= cl_image_tag @animal.photos.first.key, alt: "Kim", class:'main-img' %>
         </div>
-        <div class="d-flex flex-column justify-content-between w-50 mx-3 ">
-          <%= image_tag "Kim_main.png", alt: "Kim", width: 200, class:'secondary-img' %>
-          <%#= cl_image_tag @animal.photos[3].key, height: 300, width: 400, crop: :fill %>
-          <%= image_tag "Kim_main.png", alt: "Kim", width: 200, class:'secondary-img' %>
-          <%#= cl_image_tag @animal.photos[4].key, height: 300, width: 400, crop: :fill %>
+        <div class="4-images d-flex flex-row col-6">
+          <div class="d-flex flex-column justify-content-between w-50 mx-3">
+            <%= cl_image_tag @animal.photos.first.key, alt: "Kim", width: 200, class:'secondary-img' %>
+            <%= cl_image_tag @animal.photos.first.key, alt: "Kim", width: 200, class:'secondary-img' %>
+          </div>
+          <div class="d-flex flex-column justify-content-between w-50 mx-3 ">
+            <%= cl_image_tag @animal.photos.first.key, alt: "Kim", width: 200, class:'secondary-img' %>
+            <%= cl_image_tag @animal.photos.first.key, alt: "Kim", width: 200, class:'secondary-img' %>
+          </div>
         </div>
-      </div>
+        <% end %>
     </div>
   </div>
 
   <div class="show-details">
   </div>
-
-
 
 
   <%= link_to 'Back', animals_path %>
