@@ -4,6 +4,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
+  width: 300px;
 }
 
 .card-animal > img {
@@ -18,23 +19,29 @@
   margin: 0;
 }
 
-.card-animal p {
+p {
   font-size: 12px;
-  opacity: .7;
+  opacity: .9;
   margin: 0;
+  font-weight: 200;
 }
 
+.name {
+  font-size: 14px;
+  font-weight: bold;
+}
 
 .card-animal .card-animal-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
   background-color: #F0F7EE;
   margin: 3px;
   padding-top: 5px;
   border-radius:7px;
+  justify-content: center;
 }
 
 .card-animal-infos .card-animal-user {
@@ -51,18 +58,20 @@
   border-radius: 7px;
 }
 
-.container_index {
+
+.container-index {
   display: flex;
   flex-direction: row;
 }
 
 .map {
-  width: 300px;
+  width: 200px;
 }
 
 .photo-animal{
   display :flex;
   flex-direction: row;
+  width: fit-content;
 }
 
 .animal-infos {
@@ -78,16 +87,18 @@ text-align: end;
 font-weight: bold;
 }
 
-.animal-infos p {
-color: black;
-}
-
 .animal-infos a {
 text-decoration: none;
 color: black;
 font-weight: bold;
+font-size: 10px;
+  &:hover {
+    color: red;
+  }
 }
 
-.card-animal-infos h2 {
-  text-align: center;
+.map img {
+height: 400px;
+width: 700px;
+padding: 10px;
 }
