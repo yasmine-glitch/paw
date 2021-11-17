@@ -1,6 +1,6 @@
 <div class="container-index">
   <div class="card-animal">
-    <div class="card-animal-infos">
+    <div class="card-animal-infos-title">
       <h2> Your suggestion </h2 >
     </div>
     <% @animals.each do |animal| %>
@@ -8,13 +8,14 @@
         <%= link_to animal_path(animal) do %>
         <div class="photo-animal">
           <% if animal.photos.attached? %>
-            <%= cl_image_tag animal.photos.first.key, height: 100, width: 100, crop: :fill %>
+            <%= cl_image_tag animal.photos.first.key, height: 150, width: 150, crop: :fill %>
           <% end %>
         </div>
         <div class="animal-infos">
           <p class="name"><%= animal.name.capitalize %> </p>
-          <p><%= animal.quality %> </p>
+          <p><%= animal.species %> </p>
           <p><%= animal.age %> years old </p>
+          <p><%= animal.quality %> </p>
           <p><%= animal.description %> </p>
           <p class="price"><%= animal.price %> € /day </p>
           <% if policy(animal).edit? %>
@@ -28,7 +29,9 @@
       </div>
     <% end %>
   </div>
-  <div class="map">
-    <%= image_tag "map_paris.PNG" %>
-  </div>
+    <div class="map" style="width: 100%; height: 450px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 </div>
