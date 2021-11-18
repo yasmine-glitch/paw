@@ -1,6 +1,4 @@
-.search_bar{
-  display: flex;
-  justify-content: space-evenly;
+.box_for_search_bar{
   align-items: center;
   padding: 15px 10px;
   margin-top: 5px;
@@ -16,4 +14,9 @@
     text-align: center;
     padding: 10px;
   }
+}
+
+.search_bar {
+  display: flex;
+  justify-content: space-between;
 }
