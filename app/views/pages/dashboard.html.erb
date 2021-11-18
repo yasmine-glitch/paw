@@ -1,1 +1,89 @@
-<%= @user %>
+<div class="container">
+  <h1>Dashboard</h1>
+
+  <div>
+    <h2>My Information</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Profile's creation</th>
+          <th>Last update</th>
+        </tr>
+
+          <tr>
+            <td><%= @user.name %></td>
+            <td><%= @user.email %></td>
+            <td><%= @user.created_at %></td>
+            <td><%= @user.updated_at %></td>
+            <td><%= link_to "Update Profile", edit_user_registration_path %></td>
+          </tr>
+      </table>
+  </div>
+
+  <div>
+    <h2>My Reservations (<%= @user.reservations.count %>)</h2>
+      <% if @user.reservations.exists? %>
+        <table>
+          <tr>
+            <th>Animal</th>
+            <th>Species</th>
+            <th>Animal's address</th>
+            <th>Your Address</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+          </tr>
+
+          <% @user.reservations.each do |reservation| %>
+            <tr>
+              <td><%= Animal.find_by_id(reservation.animal_id).name %></td>
+              <td><%= Animal.find_by_id(reservation.animal_id).species %></td>
+              <td><%= Animal.find_by_id(reservation.animal_id).address %></td>
+              <td><%= reservation.address %></td>
+              <td><%= reservation.start_date %></td>
+              <td><%= reservation.end_date %></td>
+              <td><%= reservation.status %></td>
+              <td><%= link_to "View Animal", animal_path(Animal.find_by_id(reservation.animal_id)) %></td>
+            </tr>
+          <% end %>
+        </table>
+
+      <% else %>
+        <p>You have no reservation for the moment.</p>
+        <p><%= link_to "Look for animals to rent", animals_path %></p>
+      <% end %>
+  </div>
+
+  <div>
+    <h2>My Animals (<%= @user.animals.count %>)</h2>
+      <% if @user.animals.exists? %>
+        <table>
+          <tr>
+            <th>Animal</th>
+            <th>Species</th>
+            <th>Age</th>
+            <th>Quality</th>
+            <th>Address</th>
+          </tr>
+
+          <% @user.animals.each do |animal| %>
+            <tr>
+              <td><%= animal.name %></td>
+              <td><%= animal.species %></td>
+              <td><%= animal.age %> years old</td>
+              <td><%= animal.quality %></td>
+              <td><%= animal.address %></td>
+              <td><%= link_to "View your Animal", animal_path(animal.id) %></td>
+              <td><%= link_to "Update your Animal", edit_animal_path(animal.id) %></td>
+              <td><%= link_to "Delete your Animal", destroy_path(animal.id, from: "dashboard"), method: :delete %></td>
+            </tr>
+          <% end %>
+        </table>
+
+      <% else %>
+        <p>You have no animal to rent out for the moment.</p>
+        <p><%= link_to "Rent out your animal !", new_animal_path %></p>
+      <% end %>
+  </div>
+</div>
