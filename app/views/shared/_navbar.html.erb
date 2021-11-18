@@ -1,9 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="header">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "/", class: "navbar-brand" do %>
       <i class="fas fa-paw"></i>
     <% end %>
-    <h2> Paw </h2>
+    <h2><%= link_to "Paw", root_path %></h2>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,7 +13,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "Dashboard", "#", class: "nav-link" %>
+        <%= link_to "Rent an Animal", "/animals", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Add your Animal", "/animals/new", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Dashboard", "/dashboard", class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -25,3 +31,18 @@
     </ul>
   </div>
 </div>
+
+
+<%#
+<li>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </li> %>
