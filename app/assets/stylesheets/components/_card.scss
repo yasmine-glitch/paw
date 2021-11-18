@@ -4,7 +4,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 28vw;
+  margin-left: 77px;
 
   p {
   font-size: 12px;
@@ -21,9 +22,9 @@
 }
 
 .card-animal h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  margin: 0;
+  margin: 10px;
 }
 
 .card-animal-infos .name {
@@ -87,7 +88,7 @@
 }
 
 .animal-infos .price {
-text-align: end;
+padding-top: 10px;
 font-weight: bold;
 }
 
@@ -96,11 +97,12 @@ text-decoration: none;
 color: black;
 font-weight: bold;
 font-size: 10px;
-  &:hover {
-    color: red;
-  }
 }
 
 .card-animal-infos-title {
   text-align: center;
+}
+
+.change a:hover {
+    color: red;
 }

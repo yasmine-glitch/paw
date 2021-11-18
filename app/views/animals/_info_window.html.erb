@@ -1,2 +1,3 @@
 <h2><%= animal.name %></h2>
 <p><%= animal.address %></p>
+<p><%= cl_image_tag animal.photos.first.key, height: 100, width: 100, crop: :fill %></p>
