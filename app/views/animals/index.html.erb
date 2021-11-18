@@ -16,7 +16,6 @@
             <p><%= animal.species %> </p>
             <p><%= animal.age %> years old </p>
             <p><%= animal.quality %> </p>
-            <p><%= animal.description %> </p>
             <p class="price"><%= animal.price %> € /day </p>
             <% if policy(animal).edit? %>
               <%= link_to "Update", edit_animal_path(animal) %>
@@ -29,7 +28,7 @@
       <% end %>
     <% end %>
   </div>
-    <div class="map" style="width: 100%; height: 450px;"
+    <div class="map" style="height: 400px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
