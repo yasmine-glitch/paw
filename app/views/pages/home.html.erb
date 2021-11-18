@@ -1,13 +1,34 @@
 
 <div class="container">
-  <!--Filters bar with buttons (address, check-in, check-out, species -->
+  <!--Amélie : Filters bar with buttons (address, check-in, check-out, species -->
   <div class="search_bar">
-    <div class= "btn btn-filter"> Address<br>Where are you?</div>
+  <div class= "btn btn-filter"> Address<br>Where are you?</div>
     <div class= "btn btn-filter"> Check in<br>Add a date</div>
     <div class= "btn btn-filter"> Check out<br>Add a date</div>
     <div class= "btn btn-filter"> Species<br>What animal?</div>
     <div><i class="fas fa-search"></i></div>
   </div>
+
+  <!--Yas : START code searchbar animal ADDRESS in home view -->
+  <div class="search_bar"> Rent an animal for any purpose (work, help, cuddle)
+    <div class= "btn btn-filter">
+      <%= form_tag animals_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: " Name, species, address"
+        %>
+        <%= button_tag(type: "submit", class: "btn btn-default") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <!--Yas : END code searchbar animal ADDRESS in home view -->
+
+
+
+
   <!-- Inspiration Card Goat-->
   <div class="card-inspiration" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1552066318-4286142ca637?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80)">
     <div>
