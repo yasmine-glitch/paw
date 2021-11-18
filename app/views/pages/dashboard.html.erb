@@ -71,7 +71,7 @@
             <tr>
               <td><%= animal.name %></td>
               <td><%= animal.species %></td>
-              <td><%= animal.age %> years old</td>
+              <td><%= animal.age %> year(s) old</td>
               <td><%= animal.quality %></td>
               <td><%= animal.address %></td>
               <td><%= link_to "View your Animal", animal_path(animal.id) %></td>
@@ -81,9 +81,13 @@
           <% end %>
         </table>
 
+        <p><%= link_to "Rent out another animal !", new_animal_path %></p>
+
       <% else %>
         <p>You have no animal to rent out for the moment.</p>
         <p><%= link_to "Rent out your animal !", new_animal_path %></p>
       <% end %>
   </div>
 </div>
+
+<%= link_to "Logout", destroy_user_session_path, method: :delete %>
