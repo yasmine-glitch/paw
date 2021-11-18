@@ -2,13 +2,20 @@ class AnimalsController < ApplicationController
   def index
     @animals = policy_scope(Animal).order(created_at: :desc)
 
-    # <!--Yas : START code searchbar animal address in animals controller -->
+    # <!--Yas : START code searchbar in animals controller -->
     if params[:query].present?
       @animals = Animal.search_by_address_species_name(params[:query])
+      if params[:start_date].present? && params[:end_date].present?
+        @animals = @animals.select { |animal| animal.is_available?(params[:start_date], params[:end_date]) }
+        p @animals
+      end
+    elsif params[:start_date].present? && params[:end_date].present?
+      @animals = @animals.select { |animal| animal.is_available?(params[:start_date], params[:end_date]) }
+      p @animals
     else
       @animals = Animal.all
     end
-    # <!--Yas : END code searchbar animal address in animals controller -->
+    # <!--Yas : END code searchbar in animals controller -->
 
     @markers = @animals.geocoded.map do |animal|
     {

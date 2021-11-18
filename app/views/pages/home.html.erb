@@ -9,14 +9,24 @@
     <div><i class="fas fa-search"></i></div>
   </div>
 
-  <!--Yas : START code searchbar animal ADDRESS in home view -->
+  <!--Yas : START code searchbar animal ADDRESS + CALENDAR in home view -->
   <div class="search_bar"> Rent an animal for any purpose (work, help, cuddle)
     <div class= "btn btn-filter">
       <%= form_tag animals_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: " Name, species, address"
+          placeholder: "Name, species, address"
+        %>
+        <%= date_field_tag :start_date,
+          params[:start_date],
+          class: "form-control",
+          placeholder: "start date"
+        %>
+        <%= date_field_tag :end_date,
+          params[:end_date],
+          class: "form-control",
+          placeholder: "end date"
         %>
         <%= button_tag(type: "submit", class: "btn btn-default") do %>
           <i class="fas fa-search"></i>
@@ -24,7 +34,7 @@
       <% end %>
     </div>
   </div>
-  <!--Yas : END code searchbar animal ADDRESS in home view -->
+  <!--Yas : END code searchbar animal ADDRESS + CALENDAR in home view -->
 
 
 
