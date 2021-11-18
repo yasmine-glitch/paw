@@ -53,7 +53,11 @@ class AnimalsController < ApplicationController
     @animal = Animal.find(params[:id])
     authorize @animal
     @animal.destroy
-    redirect_to animals_path
+    if params[:from] == "dashboard"
+      redirect_to dashboard_path
+    else
+      redirect_to animals_path
+    end
   end
 
   private
