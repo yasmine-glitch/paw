@@ -1,5 +1,6 @@
 .animal-show-images {
   height: 450px;
+  padding-top: 15px;
 }
 
 
@@ -23,4 +24,5 @@ img {
 .secondary-img {
   height: 50%;
   width: 100%;
+  object-fit: cover;
 }

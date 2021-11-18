@@ -19,5 +19,13 @@ require("channels")
 import "controllers"
 import "bootstrap"
 import { initFlatpickr } from "../plugins/flatpickr";
+import Turbolinks from "turbolinks"
 
-initFlatpickr();
+const calendar = document.getElementById('new_reservation')
+
+document.addEventListener("turbolinks:load", () => {
+  console.log('turbo')
+    if (calendar) {
+      initFlatpickr();
+  }
+});
