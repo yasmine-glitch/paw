@@ -34,3 +34,7 @@
   opacity: 1;
   color: black;
 }
+
+.content-wrapper {
+  min-height: calc(100vh - 70px - 80px);
+}
