@@ -6,16 +6,16 @@ class ReservationsController < ApplicationController
   end
 
   # As a user, I want to book an animal (step 1/2)
-  def new
-    # identify the reservation user
-    @user = current_user
-    # identify the reservation animal
-    @animal = Animal.find(params[:animal_id])
+  # def new
+  #   # identify the reservation user
+  #   @user = current_user
+  #   # identify the reservation animal
+  #   @animal = Animal.find(params[:animal_id])
 
-    authorize @animal
-    # create the reservation
-    @reservation = Reservation.new
-  end
+  #   authorize @animal
+  #   # create the reservation
+  #   @reservation = Reservation.new
+  # end
 
   # As a user, I want to book an animal (step 2/2)
   def create
