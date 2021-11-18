@@ -2,6 +2,7 @@ class ReservationsController < ApplicationController
   # As a user, I can see my reservation
   def show
     @reservation = Reservation.find(params[:id])
+    authorize @reservation
   end
 
   # As a user, I want to book an animal (step 1/2)
@@ -19,6 +20,7 @@ class ReservationsController < ApplicationController
   # As a user, I want to book an animal (step 2/2)
   def create
     @reservation = Reservation.new(reservation_params)
+    authorize @reservation
     @user = current_user
     @reservation.user = @user
     @animal = Animal.find(params[:animal_id])
