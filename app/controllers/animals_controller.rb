@@ -2,6 +2,15 @@ class AnimalsController < ApplicationController
   def index
     @animals = policy_scope(Animal).order(created_at: :desc)
 
+    @markers = @animals.geocoded.map do |animal|
+    {
+      lat: animal.latitude,
+      lng: animal.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { animal: animal }),
+      image_url: helpers.asset_url("paws.png")
+    }
+    end
+
     # <!--Yas : START code searchbar in animals controller -->
     if params[:query].present?
       @animals = Animal.search_by_address_species_name(params[:query])
@@ -16,16 +25,6 @@ class AnimalsController < ApplicationController
       @animals = Animal.all
     end
     # <!--Yas : END code searchbar in animals controller -->
-
-    @markers = @animals.geocoded.map do |animal|
-    {
-      lat: animal.latitude,
-      lng: animal.longitude,
-      id: animal.id,
-      info_window: render_to_string(partial: "info_window", locals: { animal: animal }),
-      image_url: helpers.asset_url("paws.png")
-    }
-    end
   end
 
   def show
