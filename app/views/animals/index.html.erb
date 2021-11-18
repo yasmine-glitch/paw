@@ -16,12 +16,14 @@
             <p><%= animal.age %> years old </p>
             <p><%= animal.quality %> </p>
             <p class="price"><%= animal.price %> € /day </p>
-            <% if policy(animal).edit? %>
-              <%= link_to "Update", edit_animal_path(animal) %>
-            <% end %>
-            <% if policy(animal).destroy? %>
-              <%= link_to "Delete", destroy_path(animal.id), method: :delete %>
-            <% end %>
+            <div class="change">
+              <% if policy(animal).edit? %>
+                <%= link_to "Update", edit_animal_path(animal) %>
+              <% end %>
+              <% if policy(animal).destroy? %>
+                <%= link_to "Delete", destroy_path(animal.id), method: :delete %>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>
