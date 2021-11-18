@@ -5,6 +5,15 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  h2 {
+    margin :0;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  p {
+    margin :0;
+    font-style: italic;
+  }
 }
 
 .mapboxgl-ctrl-geocoder {
@@ -17,17 +26,7 @@
 .map {
   position: sticky;
   top: 0;
-  width: 55vw;
-  height: 400px;
+  width: 60vw;
   padding: 20px;
-  margin: 0px 120px;
-}
-
-.marker {
-  background-image: url('paws.png');
-  background-size: cover;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
+  margin: 0px 75px;
 }

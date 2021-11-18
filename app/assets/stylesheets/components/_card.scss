@@ -97,11 +97,12 @@ text-decoration: none;
 color: black;
 font-weight: bold;
 font-size: 10px;
-  &:hover {
-    color: red;
-  }
 }
 
 .card-animal-infos-title {
   text-align: center;
+}
+
+.change a:hover {
+    color: red;
 }
