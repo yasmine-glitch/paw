@@ -12,7 +12,7 @@
       <%= f.input :species, collection: @species%>
       <%= f.input :quality, label: "Qualities", as: :radio_buttons, collection: [ "Helper", "Friendly", "Worker", "Sassy", "Handsome", "Funny", "Playfull", "Quiet"]%>
       <%= f.input :description, as: :text, input_html: {rows: 3}%>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.input :photos, label: "Upload 5 pictures of your pet", as: :file, input_html: { multiple: true }%>
       <%= f.submit "Create animal", class: "btn btn-primary" %>
     <% end %>
   </div>
