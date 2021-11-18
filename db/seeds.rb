@@ -36,7 +36,7 @@ puts "Creating animals..."
 # animal3 = { name: "Wannaa", age: 5, address: "72 avenue de la République", price: 15, user: User.where('is_owner = true').sample, species: "Bird", quality: "Sassy", description: "very cool bird" }
 # animal4 = { name: "Lana", age: 1, address: "2 avenue de la République", price: 62, user: User.where('is_owner = true').sample, species: "Dog", quality: "Playfull", description: "very great dog" }
 animal5 = { name: "Billy", age: 1, address: "2 avenue Montaigne", price: 12, user: User.where('is_owner = true').sample, species: "Goat", quality: "Funny", description: "the goat of your life" }
-animal6 = { name: "Nanny", age: 2, address: "156 avenue des Champs Elysée", price: 56, user: User.where('is_owner = true').sample, species: "Goat", quality: "Handsome", description: "A beautiful goat for a beautiful garden" }
+animal6 = { name: "Nanny", age: 2, address: "5, Avenue Des Champs-Élysées, Paris", price: 56, user: User.where('is_owner = true').sample, species: "Goat", quality: "Handsome", description: "A beautiful goat for a beautiful garden" }
 animal7 = { name: "Pan", age: 4, address: "18 rue de l'évangile", price: 7, user: User.where('is_owner = true').sample, species: "Goat", quality: "Quiet", description: "lovely goat" }
 animal8 = { name: "Lambert", age: 6, address: "2 villa Adrienne Simon", price: 27, user: User.where('is_owner = true').sample, species: "Goat", quality: "Playfull", description: "I love to play with your shoes" }
 url = [
@@ -47,8 +47,9 @@ url = [
 ]
 
 [animal5, animal6, animal7, animal8].each_with_index do |attributes, index|
-  animal = Animal.create!(attributes)
+  animal = Animal.new(attributes)
   animal.photos.attach(io: URI.open(url[index]), filename: "#{animal.name}.png", content_type: "image/png")
+  animal.save
   puts "Created #{animal.name}"
 end
 

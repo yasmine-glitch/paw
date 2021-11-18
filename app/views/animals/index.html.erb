@@ -1,31 +1,32 @@
 <div class="container-index">
   <div class="card-animal">
     <div class="card-animal-infos-title">
-      <h2> Your suggestion </h2 >
+      <h2> Your Suggestions </h2 >
     </div>
     <% @animals.each do |animal| %>
-      <div class="card-animal-infos">
-        <%= link_to animal_path(animal) do %>
-        <div class="photo-animal">
-          <% if animal.photos.attached? %>
-            <%= cl_image_tag animal.photos.first.key, height: 150, width: 150, crop: :fill %>
-          <% end %>
+      <%= link_to animal_path(animal) do %>
+        <div class="card-animal-infos">
+          <div class="photo-animal">
+            <% if animal.photos.attached? %>
+              <%= cl_image_tag animal.photos.first.key, height: 150, width: 150, crop: :fill %>
+            <% end %>
+          </div>
+          <div class="animal-infos">
+            <p class="name"><%= animal.name.capitalize %> </p>
+            <p><%= animal.species %> </p>
+            <p><%= animal.age %> years old </p>
+            <p><%= animal.quality %> </p>
+            <p><%= animal.description %> </p>
+            <p class="price"><%= animal.price %> € /day </p>
+            <% if policy(animal).edit? %>
+              <%= link_to "Update", edit_animal_path(animal) %>
+            <% end %>
+            <% if policy(animal).destroy? %>
+              <%= link_to "Delete", destroy_path(animal.id), method: :delete %>
+            <% end %>
+          </div>
         </div>
-        <div class="animal-infos">
-          <p class="name"><%= animal.name.capitalize %> </p>
-          <p><%= animal.species %> </p>
-          <p><%= animal.age %> years old </p>
-          <p><%= animal.quality %> </p>
-          <p class="price"><%= animal.price %> € /day </p>
-          <% if policy(animal).edit? %>
-            <%= link_to "Update", edit_animal_path(animal) %>
-          <% end %>
-          <% if policy(animal).destroy? %>
-            <%= link_to "Delete", destroy_path(animal.id), method: :delete %>
-          <% end %>
-        </div>
-        <% end %>
-      </div>
+      <% end %>
     <% end %>
   </div>
     <div class="map" style="width: 100%; height: 450px;"

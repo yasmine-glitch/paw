@@ -30,7 +30,6 @@
   font-size: 14px;
   font-weight: bold;
 }
-
 .card-animal .card-animal-infos {
   padding: 16px;
   display: flex;
@@ -49,6 +48,10 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-animal-infos:hover{
+  background-color: #d3dbd1;
 }
 
 .card-animal-infos img {
