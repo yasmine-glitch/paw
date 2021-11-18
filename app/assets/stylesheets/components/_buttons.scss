@@ -26,3 +26,18 @@
 .btn-browse:hover {
   opacity: 1;
 }
+
+.btn-reservation {
+  color: $cadet;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-reservation($gray, $cadet);
+  transition: background 0.3s ease;
+  border: 1px solid $cadet;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: white;
+}
