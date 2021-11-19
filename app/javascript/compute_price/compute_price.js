@@ -13,21 +13,22 @@
 
 const computePrice = () => {
   const form = document.querySelector('#new_reservation')
-  form.addEventListener('change', (event) => {
-    const startDate = document.querySelector("#reservation_start_date");
-    const endDate = document.querySelector("#reservation_end_date");
-    if (startDate.value && endDate.value) {
-      const days = (Date.parse(endDate.value) - Date.parse(startDate.value)) / 86400000
-      const price_per_day = parseInt(document.querySelector("#price").innerText.match(/\d+/)[0]);
-      const total_price = (price_per_day * days)
-      const price_in_html = document.querySelector('#price_html');
-      price_in_html.insertAdjacentHTML('beforeend', `${total_price} €`);
-    }
-
+  if (form) {
+    form.addEventListener('change', (event) => {
+      const startDate = document.querySelector("#reservation_start_date");
+      const endDate = document.querySelector("#reservation_end_date");
+      if (startDate.value && endDate.value) {
+        const days = (Date.parse(endDate.value) - Date.parse(startDate.value)) / 86400000
+        const price_per_day = parseInt(document.querySelector("#price").innerText.match(/\d+/)[0]);
+        const total_price = (price_per_day * days)
+        const price_in_html = document.querySelector('#price_html');
+        price_in_html.innerText = `${total_price} €`;
+      }
       // const price_per_day = animal.price;
       // console.log(price_per_day);
 
-  })
+    })
+  }
 }
 
 export {computePrice}

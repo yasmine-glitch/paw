@@ -4,7 +4,7 @@
       <h2> Your Selection </h2 >
     </div>
     <% @animals.each do |animal| %>
-      <%= link_to animal_path(animal) do %>
+      <%= link_to animal_path(animal, end_date: params[:end_date] , start_date: params[:start_date]), data: { turbolinks: false }  do %>
         <div class="card-animal-infos" id='animal_<%= animal.id %>'
         data-highlight-target="card"
         data-action="mouseenter->highlight#highlight"
