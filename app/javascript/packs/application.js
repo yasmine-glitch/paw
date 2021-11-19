@@ -18,6 +18,9 @@ require("channels")
 
 import "controllers"
 import "bootstrap"
+import { computePrice } from "../compute_price/compute_price"
+
+
 import { initFlatpickr } from "../plugins/flatpickr";
 import Turbolinks from "turbolinks"
 
@@ -28,4 +31,5 @@ document.addEventListener("turbolinks:load", () => {
     if (calendar) {
       initFlatpickr();
   }
+  computePrice();
 });
