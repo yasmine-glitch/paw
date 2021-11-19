@@ -94,6 +94,10 @@ pictures_url = [['https://images.unsplash.com/photo-1561495376-dc9c7c5b8726?ixid
 end
 
 puts "Creating reservations..."
+reservation1 = { status: "pending", address: "20 avenue de la paw", start_date: DateTime.new(2019,9,1,17), end_date: DateTime.new(2019,9,1,19), user: User.find_by_name('Caroline'), animal: Animal.all.sample }
+reservation2 = { status: "pending", address: "35 avenue de la paw", start_date: DateTime.new(2019,9,1,17), end_date: DateTime.new(2019,9,1,19), user: User.find_by_name('Caroline'), animal: Animal.all.sample }
+reservation3 = { status: "pending", address: "72 avenue de la paw", start_date: DateTime.new(2019,9,1,17), end_date: DateTime.new(2019,9,1,19), user: User.find_by_name('Caroline'), animal: Animal.all.sample }
+reservation4 = { status: "pending", address: "2 avenue de la paw", start_date: DateTime.new(2019,9,1,17), end_date: DateTime.new(2019,9,1,19), user: User.find_by_name('Caroline'), animal: Animal.all.sample }
 reservation5 = { status: "validated", address: "12 avenue de la paw, paris", start_date: DateTime.new(2019,9,1,15), end_date: DateTime.new(2019,9,1,17), user: User.find_by_name('Yasmine'), animal: Animal.find_by_name('Regina') }
 
 [reservation1, reservation2, reservation3, reservation4, reservation5].each do |attributes|
