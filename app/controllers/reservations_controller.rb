@@ -26,7 +26,7 @@ class ReservationsController < ApplicationController
     @animal = Animal.find(params[:animal_id])
     @reservation.animal = @animal
     if @reservation.save
-      redirect_to animal_reservation_path(@animal, @reservation)
+      redirect_to dashboard_path(@reservation)
     else
       render :new
     end
