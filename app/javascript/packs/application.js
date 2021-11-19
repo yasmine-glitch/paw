@@ -19,6 +19,8 @@ require("channels")
 import "controllers"
 import "bootstrap"
 import { initFlatpickr } from "../plugins/flatpickr";
+import { TextRotate } from "txt-rotate";
+
 import Turbolinks from "turbolinks"
 
 const calendar = document.getElementById('new_reservation')
