@@ -1,17 +1,20 @@
 
 <div class="container">
-  <!--Amélie : Filters bar with buttons (address, check-in, check-out, species -->
-  <%# <div class="search_bar">
-  <div class= "btn btn-filter"> Address<br>Where are you?</div>
-    <div class= "btn btn-filter"> Check in<br>Add a date</div>
-    <div class= "btn btn-filter"> Check out<br>Add a date</div>
-    <div class= "btn btn-filter"> Species<br>What animal?</div>
-    <div><i class="fas fa-search"></i></div>
-  </div> %>
+
+<!--Yas : START code animated title -->
+<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+<h1>This animal is
+  <span
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='[ "cute.", "fierce.", "a hardwoker.", "your friend." ]'></span>
+</h1>
+<h2>One clic away from finding your dream animal...</h2>
+<!--Yas : END code animated title -->
 
   <!--Yas : START code searchbar animal ADDRESS + CALENDAR in home view -->
   <div class="box_for_search_bar">
-    <div>Rent an animal for any purpose (work, help, cuddle)</div>
+    <div class="title_search">Rent an animal for any purpose (work, help, cuddle)</div>
     <%= form_tag animals_path, method: :get do %>
     <div class="search_bar">
         <div class= "btn btn-filter">
@@ -38,7 +41,7 @@
           <%= button_tag(type: "submit", class: "btn btn-default") do %>
             <i class="fas fa-search"></i>
           <% end %>
-      
+
       <% end %>
     </div>
   </div>
@@ -56,7 +59,7 @@
       </div>
       <!--lien vers toutes les goats -->
       <div style = "margin-top: 30px">
-        <%= link_to 'Browse goats', animals_path(species: 'goat'), class: "btn-browse"%>
+        <%= link_to 'Browse goats', animals_path(species: 'Goat'), class: "btn-browse"%>
       </div>
     </div>
   </div>
@@ -69,7 +72,7 @@
       </div>
       <!--lien vers toutes les goats -->
       <div style = "margin-top: 30px">
-        <%= link_to 'Browse watchdogs', animals_path(species: 'dog'), class: "btn-browse"%>
+        <%= link_to 'Browse watchdogs', animals_path(species: 'Dog'), class: "btn-browse"%>
       </div>
     </div>
   </div>
@@ -82,7 +85,7 @@
       </div>
       <!--lien vers toutes les goats -->
       <div style = "margin-top: 30px">
-        <%= link_to 'Browse watchdogs', animals_path(species: 'cat'), class: "btn-browse"%>
+        <%= link_to 'Browse cats', animals_path(species: 'Cat'), class: "btn-browse"%>
       </div>
     </div>
   </div>
