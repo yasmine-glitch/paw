@@ -10,6 +10,7 @@ class Animal < ApplicationRecord
   validates :description, presence: true
   validates :quality, presence: true
   validates :photos, presence: true
+  attribute :review, default: ""
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
