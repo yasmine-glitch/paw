@@ -2,10 +2,17 @@
   justify-content: space-between;
   // background: white;
   font-family: lato;
+  height: 80px;
+  margin-bottom: 20px;
+  align-items: center;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-nav {
+  align-items: center;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -22,7 +29,7 @@
 }
 
 .header h2 {
-  padding-left: 10px;
+  padding-left: 30px;
   padding-top: 10px;
   font-family: lato;
   font-weight: bold;
@@ -35,4 +42,5 @@
 .nav-link {
   color: black;
   font-family: lato;
+  font-size: 1.2rem;
 }
