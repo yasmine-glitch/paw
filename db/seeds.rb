@@ -29,15 +29,15 @@ user8 = { name: "Eric", is_owner: false, email: "eric@paw.com", password: "hello
 end
 
 puts "Creating animals..."
-animal1 = { name: "Wafi", age: 1, address: "20 avenue de la République, Paris", price: 50, user: User.where('is_owner = true').sample, species: "Dog", quality: "Friendly", description: "An adorable puppy, love to play and hugg." }
-animal2 = { name: "Marooo", age: 2, address: "10 rue saint maur, Paris", price: 22, user: User.where('is_owner = true').sample, species: "Cat", quality: "Quiet", description: "A lucky black cat who loves witches and tricks." }
-animal3 = { name: "Wannaa", age: 5, address: "56 rue Laffitte, Paris", price: 1500, user: User.where('is_owner = true').sample, species: "Tiger", quality: "Sassy", description: "Very hangry tiger, do not forget to feed her otherwise she will eat you!" }
-animal4 = { name: "Lana", age: 1, address: "place denfert rochereau, Paris", price: 62, user: User.where('is_owner = true').sample, species: "Dog", quality: "Playfull", description: "Lana is full of joy, she loves hangit out near to montparnasse or any other trainstation. Don't forget your earplug, she snores loud ..." }
-animal5 = { name: "Billy", age: 1, address: "2 avenue Montaigne, Paris", price: 12, user: User.where('is_owner = true').sample, species: "Goat", quality: "Funny", description: "The goat of your life", review: "Billy ate my shoes but we had a very great family moment by Caroline" }
-animal6 = { name: "Nanny", age: 2, address: "5, Avenue Des Champs-Élysées, Paris", price: 56, user: User.where('is_owner = true').sample, species: "Goat", quality: "Handsome", description: "A beautiful goat for a beautiful garden", review: "Nanny was very efficient eating weeds and is not afraid of Paris heights! by Amélie" }
-animal7 = { name: "Pan", age: 4, address: "18 rue de l'évangile, Paris", price: 7, user: User.where('is_owner = true').sample, species: "Goat", quality: "Quiet", description: "lovely goat" }
-animal8 = { name: "Lambert", age: 6, address: "2 villa Adrienne Simon, Paris", price: 27, user: User.where('is_owner = true').sample, species: "Goat", quality: "Playfull", description: "I love to play with your shoes", review: "Lambert was a great compagnion when my girlfriend was in Milan by Sam" }
-animal9 = { name: "Regina", age: 3, address: "20 avenue de saint ouen, Paris", price: 45, user: User.where('is_owner = true').sample, species: "Dog", quality: "Fierce", description: "I protect your house no matter what", review: "Regina is a professional watchdog. She kept me company and protected the house from thieves while my family was away! by Yasmine " }
+animal1 = { name: "Wafi", age: 1, address: "20 avenue de la République, Paris", price: 50, user: User.find_by_name('Caroline'), species: "Dog", quality: "Friendly", description: "An adorable puppy, love to play and hugg." }
+animal2 = { name: "Marooo", age: 2, address: "10 rue saint maur, Paris", price: 22, user: User.find_by_name('Caroline'), species: "Cat", quality: "Quiet", description: "A lucky black cat who loves witches and tricks." }
+animal3 = { name: "Wannaa", age: 5, address: "56 rue Laffitte, Paris", price: 1500, user: User.find_by_name('Caroline'), species: "Tiger", quality: "Sassy", description: "Very hangry tiger, do not forget to feed her otherwise she will eat you!" }
+animal4 = { name: "Lana", age: 1, address: "place denfert rochereau, Paris", price: 62, user: User.find_by_name('Caroline'), species: "Dog", quality: "Playfull", description: "Lana is full of joy, she loves hangit out near to montparnasse or any other trainstation. Don't forget your earplug, she snores loud ..." }
+animal5 = { name: "Billy", age: 1, address: "2 avenue Montaigne, Paris", price: 12, user: User.find_by_name('Caroline'), species: "Goat", quality: "Funny", description: "The goat of your life", review: "Billy ate my shoes but we had a very great family moment by Caroline" }
+animal6 = { name: "Nanny", age: 2, address: "5, Avenue Des Champs-Élysées, Paris", price: 56, user: User.find_by_name('Caroline'), species: "Goat", quality: "Handsome", description: "A beautiful goat for a beautiful garden", review: "Nanny was very efficient eating weeds and is not afraid of Paris heights! by Amélie" }
+animal7 = { name: "Pan", age: 4, address: "18 rue de l'évangile, Paris", price: 7, user: User.find_by_name('Caroline'), species: "Goat", quality: "Quiet", description: "lovely goat" }
+animal8 = { name: "Lambert", age: 6, address: "2 villa Adrienne Simon, Paris", price: 27, user: User.find_by_name('Caroline'), species: "Goat", quality: "Playfull", description: "I love to play with your shoes", review: "Lambert was a great compagnion when my girlfriend was in Milan by Sam" }
+animal9 = { name: "Regina", age: 3, address: "20 avenue de saint ouen, Paris", price: 45, user: User.find_by_name('Caroline') , species: "Dog", quality: "Fierce", description: "I protect your house no matter what", review: "Regina is a professional watchdog. She kept me company and protected the house from thieves while my family was away! by Yasmine " }
 pictures_url = [['https://images.unsplash.com/photo-1561495376-dc9c7c5b8726?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGFicmFkb3J8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
                  'https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bGFicmFkb3J8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
                  'https://images.unsplash.com/photo-1510337550647-e84f83e341ca?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGxhYnJhZG9yfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
@@ -98,8 +98,9 @@ reservation1 = { status: "pending", address: "20 avenue de la paw", start_date: 
 reservation2 = { status: "pending", address: "35 avenue de la paw", start_date: DateTime.new(2019,9,1,17), end_date: DateTime.new(2019,9,1,19), user: User.where('is_owner = false').sample, animal: Animal.all.sample }
 reservation3 = { status: "pending", address: "72 avenue de la paw", start_date: DateTime.new(2019,9,1,17), end_date: DateTime.new(2019,9,1,19), user: User.where('is_owner = false').sample, animal: Animal.all.sample }
 reservation4 = { status: "pending", address: "2 avenue de la paw", start_date: DateTime.new(2019,9,1,17), end_date: DateTime.new(2019,9,1,19), user: User.where('is_owner = false').sample, animal: Animal.all.sample }
+reservation5 = { status: "validated", address: "12 avenue de la paw, paris", start_date: DateTime.new(2019,9,1,15), end_date: DateTime.new(2019,9,1,17), user: User.find_by_name('Yasmine'), animal: Animal.find_by_name('Regina') }
 
-[reservation1, reservation2, reservation3, reservation4].each do |attributes|
+[reservation1, reservation2, reservation3, reservation4, reservation5].each do |attributes|
   reservation = Reservation.create!(attributes)
   puts "Created #{reservation.status}"
 end
