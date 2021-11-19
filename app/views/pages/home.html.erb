@@ -3,13 +3,13 @@
 
 <!--Yas : START code animated title -->
 <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
-<h1>This animal is
+<div class="h1">This animal is
   <span
      class="txt-rotate"
      data-period="2000"
      data-rotate='[ "cute.", "fierce.", "a hardwoker.", "your friend." ]'></span>
-</h1>
-<h2>One clic away from finding your dream animal...</h2>
+</div>
+<div class="h2">One clic away from finding your dream animal...</div>
 <!--Yas : END code animated title -->
 
   <!--Yas : START code searchbar animal ADDRESS + CALENDAR in home view -->
@@ -17,11 +17,19 @@
     <div class="title_search">Rent an animal for any purpose (work, help, cuddle)</div>
     <%= form_tag animals_path, method: :get do %>
     <div class="search_bar">
+      <div class= "btn btn-filter">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Species"
+        %>
+      </div>
+      <div class="search_bar">
         <div class= "btn btn-filter">
-          <%= text_field_tag :query,
-            params[:query],
+          <%= text_field_tag :address,
+            params[:address],
             class: "form-control",
-            placeholder: "Name, species, address"
+            placeholder: "Address"
           %>
       </div>
       <div class= "btn btn-filter">
