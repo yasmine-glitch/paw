@@ -36,7 +36,7 @@
     <div class="resa-review col-12" >
       <div class="review">
         <h2> Reviews: </h2>
-        <h3><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>  " <%= @animal.review %>" by <%=@user.name %></h3>
+        <h3><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>  <%= @animal.review %> </h3>
       </div>
       <div class="reservation-form col-6">
         <%= simple_form_for [@animal, @reservation] do |f|%>
