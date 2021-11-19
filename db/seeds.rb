@@ -37,6 +37,7 @@ animal5 = { name: "Billy", age: 1, address: "2 avenue Montaigne", price: 12, use
 animal6 = { name: "Nanny", age: 2, address: "5, Avenue Des Champs-Élysées, Paris", price: 56, user: User.where('is_owner = true').sample, species: "Goat", quality: "Handsome", description: "A beautiful goat for a beautiful garden" }
 animal7 = { name: "Pan", age: 4, address: "18 rue de l'évangile", price: 7, user: User.where('is_owner = true').sample, species: "Goat", quality: "Quiet", description: "lovely goat" }
 animal8 = { name: "Lambert", age: 6, address: "2 villa Adrienne Simon", price: 27, user: User.where('is_owner = true').sample, species: "Goat", quality: "Playfull", description: "I love to play with your shoes" }
+animal9 = { name: "Regina", age: 3, address: "20 avenue de saint ouen Paris", price: 45, user: User.where('is_owner = true').sample, species: "Dog", quality: "Fierce", description: "I protect your house no matter what", review: "Great dog, protected me from thieves !" }
 pictures_url = [['https://images.unsplash.com/photo-1561495376-dc9c7c5b8726?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGFicmFkb3J8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
                  'https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bGFicmFkb3J8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
                  'https://images.unsplash.com/photo-1510337550647-e84f83e341ca?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGxhYnJhZG9yfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
@@ -76,9 +77,14 @@ pictures_url = [['https://images.unsplash.com/photo-1561495376-dc9c7c5b8726?ixid
         'https://images.unsplash.com/photo-1573578160998-4f4c7b023aec?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Z29hdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
         'https://images.unsplash.com/photo-1606335219805-3124944a154d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60',
         'https://images.unsplash.com/photo-1630007861276-4c7c12dbc827?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGdvYXR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
-        'https://images.unsplash.com/photo-1506076177893-89d54794ef41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z29hdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60']]
+        'https://images.unsplash.com/photo-1506076177893-89d54794ef41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z29hdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60'],
+      ['https://media.istockphoto.com/photos/portrait-of-a-doberman-dog-on-an-isolated-black-background-picture-id1284862356?b=1&k=20&m=1284862356&s=170667a&w=0&h=zN36CIirmEbp4L6qoM_hahgXBqGDxeK_fiVpiRG7ey8=',
+        'https://media.istockphoto.com/photos/beautiful-tanandblack-german-pinscher-picture-id1223511966?b=1&k=20&m=1223511966&s=170667a&w=0&h=GZAzIdvKxtH7DTN2b9hyhfDvVWERexTWdtWromMYOQk=',
+        'https://media.istockphoto.com/photos/super-dog-doberman-pinscher-running-jumping-striving-to-catch-frisbee-picture-id108315365?b=1&k=20&m=108315365&s=170667a&w=0&h=8e9GFyYvcpqvo_YTGguWYTadddlS14LMMxL66lpnpqM=',
+        'https://media.istockphoto.com/photos/beautiful-tanandblack-german-pinscher-picture-id1223511966?b=1&k=20&m=1223511966&s=170667a&w=0&h=GZAzIdvKxtH7DTN2b9hyhfDvVWERexTWdtWromMYOQk=',
+        'https://media.istockphoto.com/photos/super-dog-doberman-pinscher-running-jumping-striving-to-catch-frisbee-picture-id108315365?b=1&k=20&m=108315365&s=170667a&w=0&h=8e9GFyYvcpqvo_YTGguWYTadddlS14LMMxL66lpnpqM=']]
 
-[animal1, animal2, animal3, animal4, animal5, animal6, animal7, animal8].each_with_index do |attributes, index|
+[animal1, animal2, animal3, animal4, animal5, animal6, animal7, animal8, animal9].each_with_index do |attributes, index|
   animal = Animal.new(attributes)
   pictures_url[index].each do |url|
     animal.photos.attach(io: URI.open(url), filename: "#{animal.name}.png", content_type: "image/png")

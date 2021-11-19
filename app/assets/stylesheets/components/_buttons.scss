@@ -28,13 +28,14 @@
 }
 
 .btn-reservation {
-  color: $cadet;
+  color: black;
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
   background: linear-reservation($gray, $cadet);
   transition: background 0.3s ease;
   border: 1px solid $cadet;
+  background-color: #87BBA2;
 }
 
 .btn-gradient:hover {
