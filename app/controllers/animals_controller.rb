@@ -3,16 +3,6 @@ class AnimalsController < ApplicationController
     # <!--Yas : START code searchbar in animals controller -->
     @animals = policy_scope(Animal).order(created_at: :desc)
 
-     @markers = @animals.geocoded.map do |animal|
-    {
-      lat: animal.latitude,
-      lng: animal.longitude,
-      id: animal.id,
-      info_window: render_to_string(partial: "info_window", locals: { animal: animal }),
-      image_url: helpers.asset_url("paws.png")
-    }
-    end
-
     if params[:query].present?
       @animals = Animal.search_by_address_species_name(params[:query])
       if params[:start_date].present? && params[:end_date].present?
@@ -29,8 +19,15 @@ class AnimalsController < ApplicationController
       @animals = policy_scope(Animal).where(species: params[:species]).order(created_at: :desc)
     end
 
-
-
+     @markers = @animals.map do |animal|
+    {
+      lat: animal.latitude,
+      lng: animal.longitude,
+      id: animal.id,
+      info_window: render_to_string(partial: "info_window", locals: { animal: animal }),
+      image_url: helpers.asset_url("paws.png")
+    }
+    end
   end
 
   def show
