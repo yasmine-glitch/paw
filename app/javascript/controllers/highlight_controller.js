@@ -28,7 +28,7 @@ export default class extends Controller {
     const id = hovered_card.id.split('_')[1]
     var markers = document.querySelectorAll('.mapboxgl-marker')
     markers.forEach(function (marker) {
-        marker.button.click()
+        marker.click()
     })
   }
 }
