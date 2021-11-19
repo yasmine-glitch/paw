@@ -1,7 +1,7 @@
 <div class="container-index">
   <div class="card-animal"  data-controller="highlight">
     <div class="card-animal-infos-title">
-      <h2> Your Suggestions </h2 >
+      <h2> Your Selection </h2 >
     </div>
     <% @animals.each do |animal| %>
       <%= link_to animal_path(animal) do %>
@@ -32,7 +32,7 @@
       <% end %>
     <% end %>
   </div>
-    <div class="map" style="height: 400px;"
+    <div class="map" style="height: 600px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
